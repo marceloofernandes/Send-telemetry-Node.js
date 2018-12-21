@@ -25,7 +25,7 @@ az iot hub device-identity create --hub-name barueri-test-hub --device-id MyNode
 az iot hub device-identity show-connection-string --hub-name barueri-test-hub --device-id MyNodeDevice --output table     
 ```
 
-Make a note of the device connection string, which looks like:       
+Make a note of the **device connection string**, which looks like:       
 
 ```
 HostName=barueri-test-hub.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKey=1DrstUh8tUnp8ndhobjaMYo4mbN4gYhm5pkdtzg2dms=
@@ -37,7 +37,7 @@ HostName=barueri-test-hub.azure-devices.net;DeviceId=MyNodeDevice;SharedAccessKe
 az iot hub show-connection-string --hub-name barueri-test-hub --output table       
 ```
 
-Make a note of the service connection string, which looks like:      
+Make a note of the **service connection string**, which looks like:      
 
 ```
 HostName=barueri-test-hub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=6iwF5p2PNqZrBxejs3FZPNlfPkznrUton9Dlnp0Kz/Y=
@@ -45,4 +45,41 @@ HostName=barueri-test-hub.azure-devices.net;SharedAccessKeyName=iothubowner;Shar
 
 ## Send simulated telemetry
 1. Open your local terminal window, navigate to the root folder of the sample Node.js project. Then navigate to the iot-hub\Quickstarts\simulated-device folder.    
+
+2. Open the **SimulatedDevice.js** file in a text editor of your choice.   
+
+3. In the local terminal window, run the following commands to install the required libraries and run the simulated device application:   
+
+```
+npm install
+node SimulatedDevice.js
+```
+
+The following screenshot shows the output as the simulated device application sends telemetry to your IoT hub:    
+
+(insert picture)
+
+
+## Read the telemetry from your hub
+1. Open another local terminal window, navigate to the root folder of the sample Node.js project. Then navigate to the **iot-hub\Quickstarts\read-d2c-messages** folder.
+
+2. Open the **ReadDeviceToCloudMessages.js** file in a text editor of your choice.     
+
+
+Replace the value of the `connectionString` variable with the **service connection string** you made a note of previously. Then save your changes to the ReadDeviceToCloudMessages.js file.     
+
+3. In the local terminal window, run the following commands to install the required libraries and run the back-end application:
+
+```
+npm install
+node ReadDeviceToCloudMessages.js
+```
+
+The following screenshot shows the output as the back-end application receives telemetry sent by the simulated device to the hub:    
+
+(insert picture)    
+
+## Summary
+
+The hands-on activity was successfully complete.
 
