@@ -7,7 +7,7 @@ This document presents the results of the following hands-on lab about **Azure I
 ## Register a device
 1. Run the following commands in Azure Cloud Shell to add the IoT Hub CLI extension and to create the device identity.
 
-Note: replace `YourIoTHubName` by `barueri-test-hub`
+Note: replace `YourIoTHubName` by `barueri-test-hub` which is the IoT Hub created for this experiment.
 
 
 az extension add --name azure-cli-iot-ext
